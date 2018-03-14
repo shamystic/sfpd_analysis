@@ -1,0 +1,37 @@
+/*style.css*/
+
+body { background: #ECECEA;
+		font-family: 'Roboto', sans-serif;
+
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-family: 'Raleway', serif;
+    font-size: 20px;
+}
+
+/* unvisited link */
+a {
+    
+}
+
+
+/* mouse over link */
+a:hover {
+    color: green;
+}
+
+
+/*. is used for class 
+*/.name { 
+font-size: 20px;
+font-weight: bold;
+ }
+
+.netid { 
+font-weight: bold;
+ }
