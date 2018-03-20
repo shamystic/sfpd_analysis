@@ -1,17 +1,20 @@
 /*style.css*/
 
-body { background: #ECECEA;
+body { /*background: #ECECEA;*/
 		font-family: 'Roboto', sans-serif;
 
 }
 
 .navbar {
     border-radius: 0;
+     font-size: 16px;
 }
 
 .navbar-brand {
     font-family: 'Raleway', serif;
-    font-size: 20px;
+    font-weight: bold;
+
+    font-size: 22px;
 }
 
 /* unvisited link */
@@ -22,16 +25,12 @@ a {
 
 /* mouse over link */
 a:hover {
-    color: green;
+    color: black;
 }
 
 
 /*. is used for class 
 */.name { 
 font-size: 20px;
-font-weight: bold;
- }
-
-.netid { 
 font-weight: bold;
  }
