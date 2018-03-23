@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+
+function doFunction() { 
+	var zipmenu = document.getElementById("Zipcode");
+	var timemenu = document.getElementById("Time");
+
+	var zip = zipmenu.options[zipmenu.selectedIndex].text;
+	var time = timemenu.options[timemenu.selectedIndex].text;
+	console.log(zip)
+	console.log(time)
+} 
+
+
+</script>
+
+<select id="Zipcode">
+  <option value="1">91121</option>
+  <option value="2" selected="selected">91122</option>
+  <option value="3">91123</option>
+</select>
+
+<select id="Time">
+  <option value="1">1</option>
+  <option value="2" selected="selected">2</option>
+  <option value="3">3</option>
+</select>
+
+<input id="clickMe" type="button" value="Predict" onclick="doFunction();" />
+
+
+</html>
