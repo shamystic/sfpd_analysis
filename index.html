@@ -69,8 +69,8 @@
         <p> → <b>Medical incidents</b>, by a <b>long</b> shot.</p>
         <div align="center"><img src = 'assets/ct_counts.png' width="80%" height="80%"></div>
 
-    <br>
-    <br>
+    <br> <br> 
+   
 
     <h1>Trends</h1>
     <br>
@@ -121,14 +121,14 @@
     <p><b> What's going on zipcode 94127? </b> It seems to have an  <b>absurdly high response time </b> on average- its population is just 20,624, so it's definitely not overcrowded. It's also the wealthiest zipcode in our study, with a median household income of $95,313, which makes this even stranger. <br>
     Let's take a look at a terrain map of San Francisco - zipcode 94127 is highlighted in red:
     <br> 
-    <div align="center"><img src = 'assets/terrain.png' width="50%" height="50%"></div>
+    <div align="center"><a  href="https://www.google.com/maps/place/San+Francisco,+CA+94127/@37.7378077,-122.4544793,13.46z/data=!4m5!3m4!1s0x808f7d948d5bdc2b:0xcf1e96d1394fc506!8m2!3d37.734646!4d-122.463708!5m1!1e4" target="_blank"><img src = 'assets/terrain.png' width="50%" height="50%"></a></div>
     <br>
     <p> It turns out that <b>94127</b> is <b>almost completely enclosed by mountainous terrain</b>, and contains some itself. This definitely adds <b>complexity</b> in <b>physically reaching</b> emergencies in 94127- more mountainous land can mean more detours, more roundabout roads, and <b>on average a longer and slower-speed trip than a flatter region</b>. This can help explain why we see a lot of extremely high response time outliers when considering this zipcode, which explains the <b>vast difference</b> between the mean, which is sensitive to outliers, and the median. 
     <br> <br> 
 
     For the other zipcodes whose means differed,<b> 94104, 94108, 94111, and 94133</b> officially make up SF's crowded <b>Financial District</b>, home to the city's <b>largest concentration </b> of corporate headquarters, firms and financial institutions. <b>94105</b> and <b>94111</b> are in crowded downtown San Francisco, at or near the Financial District. For these zipcodes, high amounts of <b>traffic</b> can possibly be <b>impacting response time</b>, increasing the variance and mean. 
 
-
+  <br> <br><br> <br>
     <div id="time"> <h1>2. The Effect of Time of Day</h1></div>
     <h2>Which <b>times</b> of the day are emergency responders <b>slower to react</b> to dispatch alerts? </h2>
     <p> → Emergency responders had the <b>lowest expected delay</b> in marking themselves <b>"en route"</b> for emergency dispatches during <b>evening</b>, and naturally seemed to have the <b>most lag during night hours</b>. <br> Here's the distribution of the <b>time difference</b> between the moment the operator dispatches the unit and when the unit reports that it is en route, for these two chunks of the day. 
@@ -137,6 +137,9 @@
     <br>
     <p> → The distribution suggests late night hours <b>(12 AM to 7 AM)</b> have greater density towards the higher times, indicating <b>slower response overall</b>. 
     <br>
+    This is also indicated by a box-and-whisker plot of the distribution of times for each day portion:
+    <br>
+     <div align="center"><img src = 'assets/box.png' width="60%" height="60%"></div>
     <br>
     Two measures of central tendency, the <b>mean</b> and the <b>median</b> (used because it is robust to outliers), are shown below:</p>
     <h2 align="center">Average Time to Respond to Dispatch Alert for Portions of Day</h2>
@@ -167,15 +170,18 @@
 
   <div align="center"><img src = 'assets/hour_response.png' width="90%" height="90%"></div>
 
-
+<br> <br> <br> <br>
   <div id="income"><h1>3. The Effect of Income</h1></div>
   <h2>How does the <b>response</b> and <b>arrival time</b> differ for <b>wealthier</b> and <b>poorer</b> areas?</h2>
 
   <p> To answer this, we consult outside data on <b>median household incomes</b> for SF zipcodes. We can categorize each by quartile of annual household income. 
     <br>
     → We find that emergency responders in SF actually take <b>longer</b> to both <b>react to dispatches</b> to <b>wealthier</b> zipcodes and to <b>arrive on scene to their emergencies</b>. This was surprising, especially after reading studies such as <b><a href = "http://www.naemsp.org/Documents/2017%20Annual%20Meeting%20Handouts/3%20THURS%20Presentation7.pdf">this</a></b> and <b><a href = "https://www.bridgemi.com/detroit-journalism-cooperative/detroit-police-improve-response-times-not-all-neighborhoods-are-equal">this</a></b>.
+    <p>Here are boxplots of the time in minutes needed for responders to declare that they're <b>en route</b> to the emergency, for each income quartile:</p>
+        <div align="center"><img src = 'assets/box_income.png' width="80%" height="80%"></div>
+
     <br>
-    <p>Here's the <b>median time</b> (robust to outliers) needed for responders to declare that they're <b>en route</b> to the emergency, by <b>income quartile</b>:</p>
+    <p>Here's the <b>median time</b> (robust to outliers) needed for responders to declare that they're en route by income quartile:</p>
     <div align="center"><img src = 'assets/incomebands2.png' width="60%" height="60%"></div>
     <br>
     <p>Here's the <b>median time</b> needed for responders to <b>arrive on scene</b> to the emergency:</p>
