@@ -2,32 +2,36 @@
 <html lang="en">
 <script>
 
+var foo = {
+  'A': ['a1', 'a2', 'a3'], 
+  'B': ['b1', 'b2', 'b3'], 
+  'C': ['c1', 'c2', 'c3'],
+};
+
 function doFunction() { 
 	var zipmenu = document.getElementById("Zipcode");
 	var timemenu = document.getElementById("Time");
 
 	var zip = zipmenu.options[zipmenu.selectedIndex].text;
-	var time = timemenu.options[timemenu.selectedIndex].text;
-	console.log(zip)
-	console.log(time)
+	var time = timemenu.options[timemenu.selectedIndex].value;
+	document.getElementById("result").innerHTML = foo[zip][time];
 } 
-
-
 </script>
 
 <select id="Zipcode">
-  <option value="1">91121</option>
-  <option value="2" selected="selected">91122</option>
-  <option value="3">91123</option>
+  <option value="1">A</option>
+  <option value="2" selected="selected">B</option>
+  <option value="3">C</option>
 </select>
 
 <select id="Time">
-  <option value="1">1</option>
-  <option value="2" selected="selected">2</option>
-  <option value="3">3</option>
+  <option value="0">1</option>
+  <option value="1" selected="selected">2</option>
+  <option value="2">3</option>
 </select>
 
 <input id="clickMe" type="button" value="Predict" onclick="doFunction();" />
 
 
+<p id="result"></p>
 </html>
