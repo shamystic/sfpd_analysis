@@ -1,37 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<script>
+<head>
 
-var foo = {
-  'A': ['a1', 'a2', 'a3'], 
-  'B': ['b1', 'b2', 'b3'], 
-  'C': ['c1', 'c2', 'c3'],
-};
+  <script>
+
+
+// https://pythoniter.appspot.com/
+var map = {94102: ['1. Medical Incident - 71.0%;  2. Alarms - 13.0%;  3. Structure Fire - 12.0%;', '1. Medical Incident - 71.0%;  2. Structure Fire - 14.0%;  3. Alarms - 11.0%;', '1. Medical Incident - 68.0%;  2. Structure Fire - 18.0%;  3. Alarms - 8.0%;'], 94103: ['1. Medical Incident - 70.0%;  2. Alarms - 12.0%;  3. Traffic Collision - 9.0%;', '1. Medical Incident - 83.0%;  2. Alarms - 5.0%;  3. Structure Fire - 4.0%;', '1. Medical Incident - 70.0%;  2. Structure Fire - 13.0%;  3. Alarms - 10.0%;'], 94104: ['1. Medical Incident - 71.0%;  2. Alarms - 11.0%;  3. Gas Leak (Natural and LP Gases) - 11.0%;', '1. Structure Fire - 41.0%;  2. Medical Incident - 38.0%;  3. Alarms - 10.0%;', '1. Structure Fire - 72.0%;  2. Medical Incident - 28.0%;'], 94105: ['1. Medical Incident - 52.0%;  2. Alarms - 23.0%;  3. Train / Rail Incident - 8.0%;', '1. Medical Incident - 47.0%;  2. Alarms - 23.0%;  3. Train / Rail Incident - 18.0%;', '1. Medical Incident - 72.0%;  2. Train / Rail Incident - 16.0%;  3. Alarms - 11.0%;'], 94107: ['1. Medical Incident - 60.0%;  2. Alarms - 20.0%;  3. Structure Fire - 12.0%;', '1. Medical Incident - 62.0%;  2. Alarms - 14.0%;  3. Structure Fire - 9.0%;', '1. Medical Incident - 79.0%;  2. Alarms - 11.0%;  3. Gas Leak (Natural and LP Gases) - 3.0%;'], 94108: ['1. Medical Incident - 66.0%;  2. Alarms - 24.0%;  3. Structure Fire - 4.0%;', '1. Medical Incident - 43.0%;  2. Alarms - 34.0%;  3. Structure Fire - 21.0%;', '1. Medical Incident - 59.0%;  2. Alarms - 27.0%;  3. Traffic Collision - 7.0%;'], 94109: ['1. Medical Incident - 73.0%;  2. Structure Fire - 10.0%;  3. Alarms - 10.0%;', '1. Medical Incident - 77.0%;  2. Alarms - 9.0%;  3. Structure Fire - 7.0%;', '1. Medical Incident - 71.0%;  2. Alarms - 8.0%;  3. Outside Fire - 8.0%;'], 94110: ['1. Medical Incident - 69.0%;  2. Alarms - 8.0%;  3. Structure Fire - 7.0%;', '1. Medical Incident - 68.0%;  2. Alarms - 14.0%;  3. Structure Fire - 7.0%;', '1. Medical Incident - 75.0%;  2. Structure Fire - 8.0%;  3. Outside Fire - 6.0%;'], 94111: ['1. Medical Incident - 63.0%;  2. Water Rescue - 18.0%;  3. Outside Fire - 8.0%;', '1. Medical Incident - 83.0%;  2. Structure Fire - 10.0%;  3. Other - 6.0%;', '1. Medical Incident - 43.0%;  2. Train / Rail Incident - 23.0%;  3. Alarms - 20.0%;'], 94112: ['1. Medical Incident - 68.0%;  2. Structure Fire - 18.0%;  3. Alarms - 8.0%;', '1. Medical Incident - 79.0%;  2. Traffic Collision - 15.0%;  3. Alarms - 2.0%;', '1. Medical Incident - 64.0%;  2. Structure Fire - 29.0%;  3. Alarms - 3.0%;'], 94114: ['1. Medical Incident - 54.0%;  2. Alarms - 12.0%;  3. Other - 11.0%;', '1. Medical Incident - 72.0%;  2. Alarms - 10.0%;  3. Structure Fire - 9.0%;', '1. Medical Incident - 69.0%;  2. Alarms - 10.0%;  3. Structure Fire - 7.0%;'], 94115: ['1. Medical Incident - 68.0%;  2. Structure Fire - 9.0%;  3. Alarms - 9.0%;', '1. Medical Incident - 64.0%;  2. Alarms - 17.0%;  3. Structure Fire - 12.0%;', '1. Medical Incident - 63.0%;  2. Alarms - 22.0%;  3. Structure Fire - 12.0%;'], 94116: ['1. Medical Incident - 80.0%;  2. Traffic Collision - 7.0%;  3. Alarms - 6.0%;', '1. Medical Incident - 66.0%;  2. Structure Fire - 19.0%;  3. Alarms - 9.0%;', '1. Medical Incident - 98.0%;  2. Citizen Assist / Service Call - 2.0%;'], 94117: ['1. Medical Incident - 58.0%;  2. Structure Fire - 34.0%;  3. Alarms - 6.0%;', '1. Medical Incident - 59.0%;  2. Structure Fire - 20.0%;  3. Alarms - 11.0%;', '1. Medical Incident - 72.0%;  2. Structure Fire - 14.0%;  3. Alarms - 7.0%;'], 94118: ['1. Medical Incident - 69.0%;  2. Alarms - 12.0%;  3. Structure Fire - 9.0%;', '1. Medical Incident - 55.0%;  2. Structure Fire - 22.0%;  3. Traffic Collision - 10.0%;', '1. Medical Incident - 95.0%;  2. Odor (Strange / Unknown) - 2.0%;  3. Citizen Assist / Service Call - 2.0%;'], 94121: ['1. Medical Incident - 66.0%;  2. Alarms - 21.0%;  3. Outside Fire - 5.0%;', '1. Medical Incident - 68.0%;  2. Structure Fire - 12.0%;  3. Alarms - 7.0%;', '1. Medical Incident - 57.0%;  2. Traffic Collision - 24.0%;  3. Structure Fire - 8.0%;'], 94122: ['1. Medical Incident - 71.0%;  2. Alarms - 14.0%;  3. Traffic Collision - 8.0%;', '1. Medical Incident - 70.0%;  2. Structure Fire - 11.0%;  3. Alarms - 8.0%;', '1. Medical Incident - 62.0%;  2. Vehicle Fire - 18.0%;  3. Structure Fire - 17.0%;'], 94123: ['1. Medical Incident - 60.0%;  2. Alarms - 27.0%;  3. Gas Leak (Natural and LP Gases) - 5.0%;', '1. Medical Incident - 50.0%;  2. Water Rescue - 16.0%;  3. Structure Fire - 14.0%;', '1. Medical Incident - 100.0%;'], 94124: ['1. Medical Incident - 79.0%;  2. Gas Leak (Natural and LP Gases) - 7.0%;  3. Alarms - 3.0%;', '1. Medical Incident - 76.0%;  2. Traffic Collision - 7.0%;  3. Alarms - 6.0%;', '1. Medical Incident - 57.0%;  2. Structure Fire - 16.0%;  3. Outside Fire - 9.0%;'], 94127: ['1. Medical Incident - 46.0%;  2. Structure Fire - 36.0%;  3. Alarms - 11.0%;', '1. Structure Fire - 67.0%;  2. Medical Incident - 28.0%;  3. Other - 3.0%;', '1. Medical Incident - 100.0%;'], 94129: ['1. Medical Incident - 73.0%;  2. Alarms - 27.0%;', '1. Water Rescue - 83.0%;  2. Alarms - 13.0%;  3. Medical Incident - 4.0%;', '1. Alarms - 50.0%;  2. Medical Incident - 50.0%;'], 94130: ['1. Medical Incident - 38.0%;  2. Other - 33.0%;  3. Traffic Collision - 17.0%;', '1. Medical Incident - 100.0%;', '1. Medical Incident - 79.0%;  2. Traffic Collision - 21.0%;'], 94131: ['1. Medical Incident - 74.0%;  2. Traffic Collision - 17.0%;  3. Citizen Assist / Service Call - 4.0%;', '1. Medical Incident - 52.0%;  2. Alarms - 22.0%;  3. Structure Fire - 10.0%;', '1. Medical Incident - 78.0%;  2. Alarms - 9.0%;  3. Traffic Collision - 6.0%;'], 94132: ['1. Medical Incident - 67.0%;  2. Alarms - 15.0%;  3. Water Rescue - 11.0%;', '1. Medical Incident - 64.0%;  2. Alarms - 21.0%;  3. Structure Fire - 12.0%;', '1. Medical Incident - 97.0%;  2. Outside Fire - 3.0%;'], 94133: ['1. Medical Incident - 58.0%;  2. Structure Fire - 21.0%;  3. Alarms - 16.0%;', '1. Medical Incident - 59.0%;  2. Structure Fire - 17.0%;  3. Alarms - 11.0%;', '1. Medical Incident - 92.0%;  2. Structure Fire - 8.0%;'], 94134: ['1. Medical Incident - 68.0%;  2. Structure Fire - 10.0%;  3. Vehicle Fire - 7.0%;', '1. Medical Incident - 75.0%;  2. Traffic Collision - 16.0%;  3. Alarms - 3.0%;', '1. Medical Incident - 61.0%;  2. Traffic Collision - 24.0%;  3. Alarms - 15.0%;'], 94158: ['1. Medical Incident - 60.0%;  2. Alarms - 18.0%;  3. Traffic Collision - 16.0%;', '1. Medical Incident - 61.0%;  2. Alarms - 32.0%;  3. Citizen Assist / Service Call - 4.0%;', '1. Medical Incident - 80.0%;  2. Structure Fire - 20.0%;']};
 
 function doFunction() { 
-	var zipmenu = document.getElementById("Zipcode");
-	var timemenu = document.getElementById("Time");
+  var zipmenu = document.getElementById("Zipcode");
+  var timemenu = document.getElementById("Time");
 
-	var zip = zipmenu.options[zipmenu.selectedIndex].text;
-	var time = timemenu.options[timemenu.selectedIndex].value;
-	document.getElementById("result").innerHTML = foo[zip][time];
+  var zip = zipmenu.options[zipmenu.selectedIndex].text;
+  var time = timemenu.options[timemenu.selectedIndex].value;
+  document.getElementById("result").innerHTML = map[zip][time];
 } 
 </script>
 
+  <title>SFPD Dispatch Analysis</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/sfpd_analysis/index">SFPD Dispatch Analysis</a>
+    </div>
+    <ul class="nav navbar-nav">
+<!--       <li class = ""><a href="/sfpd_analysis/index"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Home</a></li>
+ -->
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Trends
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Trend 1</a></li>
+          <li><a href="#">Trend 2</a></li>
+          <li><a href="#">Trend 3</a></li>
+        </ul>
+      </li>
+
+      <li class = "active"><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Heatmaps</a></li>
+      <li class = "active"><a href = "/sfpd_analysis/predict"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Predict Dispatch</a></li>
+      <li class = ""><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-new-window" aria-hidden = "true"></span>&nbsp;Crime Correlation</a></li>
+      <li class = ""><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Dispatch Time</a></li>
+      <li class = ""><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Future Preparation</a></li>
+    </ul>
+
+    <ul class = "nav navbar-nav navbar-right">
+      <li class = ""><a href = "#"><span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;Jupyter Notebook</a></li>
+      <li class = ""><a href = "#"><span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;About</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container" align="center">
 <select id="Zipcode">
-  <option value="1">A</option>
-  <option value="2" selected="selected">B</option>
-  <option value="3">C</option>
+  <option value="0" selected="selected">94102</option>
+  <option value="1">94103</option>
+  <option value="2">94104</option>
+  <option value="3">94105</option>
+  <option value="4">94107</option>
+  <option value="5">94108</option>
+  <option value="6">94109</option>
+  <option value="7">94110</option>
+  <option value="8">94111</option>
+  <option value="9">94112</option>
+  <option value="10">94114</option>
+  <option value="11">94115</option>
+  <option value="12">94116</option>
+  <option value="13">94117</option>
+  <option value="14">94118</option>
+  <option value="15">94121</option>
+  <option value="16">94122</option>
+  <option value="17">94123</option>
+  <option value="18">94124</option>
+  <option value="19">94127</option>
+  <option value="20">94129</option>
+  <option value="21">94130</option>
+  <option value="22">94131</option>
+  <option value="23">94132</option>
+  <option value="24">94133</option>
+  <option value="25">94134</option>
+  <option value="26">94158</option>
 </select>
 
 <select id="Time">
-  <option value="0">1</option>
-  <option value="1" selected="selected">2</option>
-  <option value="2">3</option>
+<option value="0" selected="selected">8 AM to 3 PM</option>
+<option value="1">4 PM to 11 PM</option>
+<option value="2">12 AM to 7 AM</option>
 </select>
 
 <input id="clickMe" type="button" value="Predict" onclick="doFunction();" />
 
+<br>
+<br>
 
 <p id="result"></p>
+</div>
+
+</body>
 </html>
+
