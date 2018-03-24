@@ -25,7 +25,7 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Trends
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Trend 1</a></li>
+          <li><a href="/sfpd_analysis/index#time">Trend 1</a></li>
           <li><a href="#">Trend 2</a></li>
           <li><a href="#">Trend 3</a></li>
         </ul>
@@ -47,11 +47,11 @@
   
   
 <div class="container">
-  <h1>Welcome!</h1>
-    <p>The SFPD Dispatch dataset contains public information from the San Francisco Fire Department on dispatch information for 10,000 emergency calls, with call time and arrival times, multiple levels of location, call types, and dispositions from January 2018. This website serves to highlight some findings from this dataset- full data analysis scripts and code can be found in the links to the Jupyter Notebook above. 
+  <h1>Exploring SFPD Dispatch Data</h1>
+    <p>The SFPD Dispatch dataset contains dispatch information for 10,000 emergency calls, with call and arrival times, call types, location, and dispositions from January 2018. This website serves to highlight some findings from this dataset- full data analysis scripts and code can be found in the links to the Jupyter Notebook above. 
     <br>
     <br>
-    Let's dive right in with the fundamental questions: 
+    Let's start with the fundamental questions:
 
     <h2>Which areas had the most emergencies? </h2>
         <p> → Here's a sorted bar plot of frequency by zipcode:</p>
@@ -69,22 +69,21 @@
     <br>
     <br>
 
-    <h2>Interesting Trends</h2>
-
-    <p>Now let's dig a little deeper and find some cool trends. </p>
+    <h1>Trends</h1>
     <br>
-    <br>    
-    <h1>The Effect of Time of Day</h1>
+    <div id="time"> <h1>1. The Effect of Time of Day</h1></div>
     <h2>Which times of the day are emergency responders slower to react to dispatch alerts? </h2>
-    <p> → Emergency responders had the lowest expected delay in marking themselves "en route" for emergency dispatches during evening, and naturally seemed to have the most lag during night hours. Here we plot the distribution of, specifically, the time difference between when the operator dispatches the unit and when the unit reporting that it is en route, for these two chunks of the day. 
+    <p> → Emergency responders had the lowest expected delay in marking themselves "en route" for emergency dispatches during evening, and naturally seemed to have the most lag during night hours. <br> Here's the distribution of the time difference between the moment the operator dispatches the unit and when the unit reports that it is en route, for these two chunks of the day. 
     <br>
-    → As the distribution suggests, we see late night hours (12 AM to 7 AM) have greater density towards the higher times, indicating slower response. 
-    </p>
+ 
 
 
     <div align="center"><img src = 'assets/time_dist.png' width="90%" height="90%"></div>
     <br>
-    <p> Two measures of central tendency, the mean and the median (used because it is robust to outliers), are shown in the table below for more information. </p>
+    <p> → The distribution suggests late night hours (12 AM to 7 AM) have greater density towards the higher times, indicating slower response overall. 
+    <br>
+    <br>
+    Two measures of central tendency, the mean and the median (used because it is robust to outliers), are shown below:</p>
 
     <h2 align="center">Average Time to Respond to Dispatch Alert for Portions of Day</h2>
     <table align="center">
@@ -115,16 +114,17 @@
 
 
 
-  <h1>The Effect of Income</h1>
+  <h1>2. The Effect of Income</h1>
   <h2>How is the response and travel time for wealthier and poorer areas?</h2>
 
-  <p> To answer this, we consult outside data to get median household incomes for zipcodes in San Francisco.
+  <p> To answer this, we consult outside data on median household incomes for SF zipcodes.
     <br>
-    → It turns out that emergency responders actually take longer to respond to emergency dispatches to wealthier districts and take longer to get on scene to these emrgencies overall. 
+    → Emergency responders actually take longer to respond to dispatches to wealthier districts and take longer to get on scene to these emergency overall. 
     <br>
-    While there may be a lot of confounding factors to this correlation, such as geographic circumstances (as we explore in Crime Correlation) it is reassuring to know that SF emergency responders aren't taking longer to respond to low income areas. 
 
   </p>
+
+  <h1>3. The Effect of Population</h1>
 
 
 
