@@ -48,22 +48,22 @@
   
 <div class="container">
   <h1>Exploring SFPD Dispatch Data</h1>
-    <p>The SFPD Dispatch dataset contains dispatch information for 10,000 emergency calls, with call and arrival times, call types, location, and dispositions from January 2018. This website serves to highlight some findings from this dataset- full data analysis code can be found in the Jupyter Notebook linked above. 
+    <p>The SFPD Dispatch dataset contains <b>emergency dispatch information</b> for 10,000 emergency calls from January 2018. This site highlights some findings from this dataset- full data analysis code can be found in the Jupyter Notebook linked above. 
     <br>
     <br>
     Let's start with the fundamental questions:
 
-    <h2>Which areas had the most emergencies? </h2>
-        <p> → Here's a sorted bar plot of frequency by zipcode:</p>
+    <h2>Which <b>areas</b> had the <b>most emergencies? </b></h2>
+        <p> → Here's a sorted bar plot of <b>frequency</b> by <b>zipcode:</b></p>
         <div align="center"><img src = 'assets/zips_freq.png' width="70%" height="70%"></div>
         <p> More on locational data can be found in Crime Correlation.</p>
     <br>
     <br>
-    <h2>Which times of the day had the most emergencies? </h2>
+    <h2>Which <b>times</b> of the day had the <b>most emergencies? </b></h2>
     <br>
     <br>
-    <h2>What is the most common type of emergency? </h2>
-        <p> → Medical incidents, by a long shot.</p>
+    <h2>What is the <b>most common type</b> of emergency? </h2>
+        <p> → <b>Medical incidents</b>, by a <b>long</b> shot.</p>
         <div align="center"><img src = 'assets/call_types.png' width="70%" height="70%"></div>
 
     <br>
@@ -72,26 +72,70 @@
     <h1>Trends</h1>
     <br>
     <div id="location"> <h1>1. The Effect of Location</h1></div>
-    <h2>Which places in SF take the longest for emergency responders to reach?</h2>
-    <div align="center"><img src = 'assets/sa_response.png' width="100%" height="100%"></div>
-
-
+    <h2>Which  <b>places</b> in SF take the  <b>longest</b> for emergency responders to reach?</h2>
+    <p> Here we plot the median of the  <b>time difference between when the call is received </b> and <b>when the responders arrive on scene </b>of the incident, the "response time". Median is used here because it is <b>robust</b> to possible <b>outliers</b>.
     <div align="center"><img src = 'assets/zipcode_response.png' width="100%" height="100%"></div>
 
-    <div align="center"><img src = 'assets/battalion_response.png' width="100%" height="100%"></div>
+  <h2 align="center">Highest Median Response Times By Zipcode</h2>
+    <table align="center">
+      <tr>
+        <th>Zipcode</th>
+        <th>First</th>
+        <th>Second</th>
+        <th>Third</th>
+      </tr>
+      <tr>
+        <td>Zipcode: Median Response Time</td>
+        <td>94129: 11.1 Minutes</td>
+        <td>94134: 9.9 Minutes </td>
+        <td>94127: 9.78 Minutes</td>
+      </tr>
+    </table>
 
+    <br>
+   <p>  Outliers can be important though, so we'll do them next. <br>
+     I was surprised to see that when I used  <b>means </b> instead of medians, I saw a  <b>very different plot: </b>: 
+
+    <div align="center"><img src = 'assets/zipcode_response_mean.png' width="100%" height="100%"></div>
+
+    <h2 align="center">Highest Average (Mean) Response Times By Zipcode</h2>
+    <table align="center">
+      <tr>
+        <th>Zipcode</th>
+        <th>First</th>
+        <th>Second</th>
+        <th>Third</th>
+      </tr>
+      <tr>
+        <td>Zipcode: Mean Response Time</td>
+        <td>94127: 45.32 Minutes</td>
+        <td>94105: 19.02 Minutes </td>
+        <td>94129: 15.55 Minutes</td>
+      </tr>
+    </table>
+    <br>
+
+    <p><b> What's going on zipcode 94127? </b> It seems to have an  <b>absurdly high response time </b> on average- its population is just 20,624, so it's definitely not overcrowded. It's also the wealthiest zipcode in our study, with a median household income of $95,313, which makes this even stranger. <br>
+    Let's take a look at a terrain map of San Francisco - zipcode 94127 is highlighted in red:
+    <br> 
+    <div align="center"><img src = 'assets/94127.png' width="50%" height="50%"></div>
+    <br>
+    <p> It turns out that <b>94127</b> is <b>almost completely enclosed by mountainous terrain</b>, and contains some itself. This definitely adds <b>complexity</b> in <b>physically reaching</b> emergencies in 94127- more mountainous land can mean more detours, more roundabout roads, and <b>on average a longer and slower-speed trip than a flatter region</b>. This can help explain why we see a lot of extremely high response time outliers when considering this zipcode, which explains the <b>vast difference</b> between the mean, which is sensitive to outliers, and the median. 
+    <br> <br> 
+
+    For the other zipcodes whose means differed,<b> 94104, 94108, 94111, and 94133</b> officially make up SF's crowded <b>Financial District</b>, home to the city's <b>largest concentration </b> of corporate headquarters, firms and financial institutions. <b>94105</b> and <b>94111</b> are in crowded downtown San Francisco, at or near the Financial District. For these zipcodes, high amounts of <b>traffic</b> can possibly be <b>impacting response time</b>, increasing the variance and mean. 
 
 
     <div id="time"> <h1>2. The Effect of Time of Day</h1></div>
-    <h2>Which times of the day are emergency responders slower to react to dispatch alerts? </h2>
-    <p> → Emergency responders had the lowest expected delay in marking themselves "en route" for emergency dispatches during evening, and naturally seemed to have the most lag during night hours. <br> Here's the distribution of the time difference between the moment the operator dispatches the unit and when the unit reports that it is en route, for these two chunks of the day. 
+    <h2>Which <b>times</b> of the day are emergency responders <b>slower to react</b> to dispatch alerts? </h2>
+    <p> → Emergency responders had the <b>lowest expected delay</b> in marking themselves <b>"en route"</b> for emergency dispatches during <b>evening</b>, and naturally seemed to have the <b>most lag during night hours</b>. <br> Here's the distribution of the <b>time difference</b> between the moment the operator dispatches the unit and when the unit reports that it is en route, for these two chunks of the day. 
     <br>
     <div align="center"><img src = 'assets/time_dist.png' width="90%" height="90%"></div>
     <br>
-    <p> → The distribution suggests late night hours (12 AM to 7 AM) have greater density towards the higher times, indicating slower response overall. 
+    <p> → The distribution suggests late night hours <b>(12 AM to 7 AM)</b> have greater density towards the higher times, indicating <b>slower response overall</b>. 
     <br>
     <br>
-    Two measures of central tendency, the mean and the median (used because it is robust to outliers), are shown below:</p>
+    Two measures of central tendency, the <b>mean</b> and the <b>median</b> (used because it is robust to outliers), are shown below:</p>
     <h2 align="center">Average Time to Respond to Dispatch Alert for Portions of Day</h2>
     <table align="center">
       <tr>
@@ -116,28 +160,23 @@
       </tr>
     </table>
     <br>
-    <p>What about specific hours? </p>
+    <p>Plotting this time difference by <b>specific hour</b>, it makes it clear that <b>night hours are hardest</b> on emergency responders (this is 24 hr time- 0 is midnight, 4 represents 4 AM, 5 is 5 AM, etc.): </p>
+
+  <div align="center"><img src = 'assets/hour_response.png' width="90%" height="90%"></div>
+
 
   <div id="income"><h1>3. The Effect of Income</h1></div>
-  <h2>How is the response and travel time for wealthier and poorer areas?</h2>
+  <h2>How does the <b>response</b> and <b>arrival time</b> differ for <b>wealthier</b> and <b>poorer</b> areas?</h2>
 
-  <p> To answer this, we consult outside data on median household incomes for SF zipcodes.
+  <p> To answer this, we consult outside data on <b>median household incomes</b> for SF zipcodes. We can categorize each by quartile of annual household income. 
     <br>
-    → Emergency responders in SF actually take longer to both respond to dispatches to wealthier districts and to get on scene to their emergencies. This was surprising, especially after reading studies such as <a href = "http://www.naemsp.org/Documents/2017%20Annual%20Meeting%20Handouts/3%20THURS%20Presentation7.pdf">this</a> and <a href = "https://www.bridgemi.com/detroit-journalism-cooperative/detroit-police-improve-response-times-not-all-neighborhoods-are-equal">this</a>.
-    We plot medians here as it is robust to outliers; means are displayed in the table.
+    → We find that emergency responders in SF actually take <b>longer</b> to both <b>react to dispatches</b> to <b>wealthier</b> zipcodes and to <b>arrive on scene to their emergencies</b>. This was surprising, especially after reading studies such as <b><a href = "http://www.naemsp.org/Documents/2017%20Annual%20Meeting%20Handouts/3%20THURS%20Presentation7.pdf">this</a></b> and <b><a href = "https://www.bridgemi.com/detroit-journalism-cooperative/detroit-police-improve-response-times-not-all-neighborhoods-are-equal">this</a></b>.
     <br>
-    <p>Here's the median time needed for responders to declare that they're on route to the emergency, by income quartile:</p>
+    <p>Here's the <b>median time</b> (robust to outliers) needed for responders to declare that they're <b>en route</b> to the emergency, by <b>income quartile</b>:</p>
     <div align="center"><img src = 'assets/incomebands2.png' width="90%" height="90%"></div>
     <br>
-    <p>Here's the median time needed for responders to arrive on scene to the emergency:</p>
+    <p>Here's the <b>median time</b> needed for responders to <b>arrive on scene</b> to the emergency:</p>
     <div align="center"><img src = 'assets/incomebands.png' width="90%" height="90%"></div>
-
-
-  </p>
-
-  <h1>3. The Effect of Population</h1>
-
-
 
 
   </p>
@@ -147,7 +186,8 @@
 
 
 
+
+
 </div>
 </body>
-
 </html>

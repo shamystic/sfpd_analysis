@@ -25,4 +25,4 @@ dict_population = {int(k) : v for k, v in zip(zipcodes, populations)}
 print ('Income =', dict_income)
 print ('Population =', dict_population)
 print ('Dictionaries the same size? {}'.format(len(dict_population) == len(dict_income)))
-print (dict_income[94105])
+print (dict_population[94111])
