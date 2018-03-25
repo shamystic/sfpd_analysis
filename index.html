@@ -33,7 +33,7 @@
                <li class = ""><a href = "/sfpd_analysis/future"><span class = "glyphicon glyphicon-road" aria-hidden = "true"></span>&nbsp;Future Preparation</a></li>
             </ul>
             <ul class = "nav navbar-nav navbar-right">
-               <li class = ""><a href = "/sfpd_analysis/sfpd_analysis_notebook"><span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;Jupyter Notebook</a></li>
+               <li class = ""><a href = "/sfpd_analysis/sfpd_analysis_notebook" target="_blank"><span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;Jupyter Notebook</a></li>
                <li class = ""><a href = "#"><span class = "glyphicon glyphicon-user" aria-hidden = "true"></span>&nbsp;About</a></li>
             </ul>
          </div>
@@ -59,8 +59,7 @@
          <p> → <b>Medical incidents</b>, by a <b>long</b> shot.</p>
          <div align="center"><img src = 'assets/ct_counts.png' width="80%" height="80%"></div>
          <br> <br> 
-         <h1>Trends</h1>
-         <br>
+         <h1 align="center">Trends</h1>
          <div id="location">
             <h1>1. The Effect of Location</h1>
          </div>
@@ -109,7 +108,7 @@
          <br>
          <p> It turns out that <b>94127</b> is <b>almost completely enclosed by mountainous terrain</b>, and contains some itself. This definitely adds <b>complexity</b> in <b>physically reaching</b> emergencies in 94127- more mountainous land can mean more detours, more roundabout roads, and <b>on average a longer and slower-speed trip than a flatter region</b>. This can help explain why we see a lot of extremely high response time outliers when considering this zipcode, which explains the <b>vast difference</b> between the mean, which is sensitive to outliers, and the median. 
             <br> <br> 
-            For the other zipcodes whose means differed,<b> 94104, 94108, 94111, and 94133</b> officially make up SF's crowded <b>Financial District</b>, home to the city's <b>largest concentration </b> of corporate headquarters, firms and financial institutions. <b>94102, 94103, 94105</b> and <b>94111</b> are in crowded downtown San Francisco, at or near the Financial District. For these zipcodes, high amounts of <b>traffic</b> can possibly be <b>impacting response time</b>, increasing the variance and mean. 
+            For the other zipcodes whose means differed,<b> 94104, 94108, 94111, and 94133</b> officially make up SF's crowded <b>Financial District</b>, home to the city's <b>largest concentration </b> of corporate headquarters, firms and financial institutions. <b>94102, 94103, 94105</b> and <b>94111</b> are in crowded downtown San Francisco, at or near the Financial District. For these zipcodes, high amounts of <b>traffic</b> can possibly be <b>impacting response time</b>, increasing the variance and mean. We explore zipcode 94129 in <a href="https://shamystic.github.io/sfpd_analysis/dispatch">Dispatch Time</a>.
             <br> <br><br> <br>
          <div id="time">
             <h1>2. The Effect of Time of Day</h1>
@@ -125,7 +124,7 @@
             <br>
          <div align="center"><img src = 'assets/box.png' width="60%" height="60%"></div>
          <br>
-         Two measures of central tendency, the <b>mean</b> and the <b>median</b> (used because it is robust to outliers), are shown below:</p>
+        <p> Two measures of central tendency, the <b>mean</b> and the <b>median</b> (used because it is robust to outliers), are shown below:</p>
          <h2 align="center">Average Time to Respond to Dispatch Alert for Portions of Day</h2>
          <table align="center">
             <tr>
