@@ -28,7 +28,7 @@
                </li>
                <li class = "active"><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Heatmaps</a></li>
                <li class = "active"><a href = "/sfpd_analysis/predict"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Predict Dispatch</a></li>
-               <li class = ""><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-new-window" aria-hidden = "true"></span>&nbsp;Crime Correlation</a></li>
+               <li class = ""><a href = "/sfpd_analysis/crime_correlation"><span class = "glyphicon glyphicon-new-window" aria-hidden = "true"></span>&nbsp;Crime Correlation</a></li>
                <li class = ""><a href = "/sfpd_analysis/dispatch"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Dispatch Time</a></li>
                <li class = ""><a href = "/sfpd_analysis/future"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Future Preparation</a></li>
             </ul>
@@ -39,7 +39,7 @@
          </div>
       </nav>
       <div class="container">
-         <h1>Which areas take the longest to dispatch to, on average?</h1>
+         <h1 align="center">Which areas take the longest to dispatch to, on average?</h1>
          <h2 align="center">Top 3 Longest Dispatch Time Locations</h2>
          <table align="center">
             <tr>
@@ -86,8 +86,9 @@
          <br>
          <p>Dispatch time is the <b>difference</b> in minutes between when the <b>call was received</b>, and when the responders <b>arrive on scene</b>.
             <br>
-            <b>Means</b> were used to compute averages; for completeness medians and means were plotted below for each location type, as they can lead to different answers- mean is particularly sensitive to outliers, which are very much present.
-         <h2>How can this be reduced?</h2>
+            <b>Means</b> were used to compute averages; for completeness medians and means were plotted below for each location type, as they can lead to different answers- mean is particularly sensitive to outliers, which are very much present.</p>
+          <br><br>
+         <h2 align="center">How can this be reduced?</h2>
          <p>
          <h2>1. Route optimization and shortcuts, especially for urban and tough terrain areas.</h2>
          <p>We saw earlier that some of the hardest to reach areas are highly urbanized and concentrated, such as the Financial District and Downtown. Factors such as crowdiness and traffic are outside of the control of emergency responders, but work can be put into find possible driving shortcuts to destinations in the highly urban districts, as they are often the most troubled- For example, zipcode 94102 had the most emergency calls, and 94105 faced one of the slowest response times- both are in downtown SF.
@@ -108,6 +109,9 @@
          <br>
          <p>A possible cause for extremely high response times to Presidio is that people in emergencies are not calling the <a href="https://www.nps.gov/prsf/learn/historyculture/fire-station.htm">Presidio service</a> and instead are calling 911 by cell phone, directing their calls to regular SFPD dispatch centers outside Presidio- a very natural and wooded region that is probably hard to navigate from the outside, especially by those unfamiliar with it, like non-Presidio police.
             <br> So increasing awareness of the separate number for emergency services directly serving Presidio and similarly unique regions would most likely help reduce the high response time and increase efficiency of emergency handling overall.
+
+         <br><br><br><br><br>
+         <h3 align="center">Mean and Median Barplots of Response Time to Locations</h3>
          <div align="center"><img src='assets/mean_battalion_response.png' width="80%" height="80%"></div>
          <div align="center"><img src='assets/median_battalion_response.png' width="80%" height="80%"></div>
          <div align="center"><img src='assets/mean_sa_response.png' width="80%" height="80%"></div>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>SFPD Dispatch Analysis</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <a class="navbar-brand" href="/sfpd_analysis/index">SFPD Dispatch Analysis</a>
+            </div>
+            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Trends
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="/sfpd_analysis/index#location">Effect of Location</a></li>
+                     <li><a href="/sfpd_analysis/index#time">Effect of Time of Day</a></li>
+                     <li><a href="/sfpd_analysis/index#income">Effect of Income</a></li>
+                  </ul>
+               </li>
+               <li class = "active"><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Heatmaps</a></li>
+               <li class = "active"><a href = "/sfpd_analysis/predict"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Predict Dispatch</a></li>
+               <li class = ""><a href = "/sfpd_analysis/crime_correlation"><span class = "glyphicon glyphicon-new-window" aria-hidden = "true"></span>&nbsp;Crime Correlation</a></li>
+               <li class = ""><a href = "/sfpd_analysis/dispatch"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Dispatch Time</a></li>
+               <li class = ""><a href = "/sfpd_analysis/future"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Future Preparation</a></li>
+            </ul>
+            <ul class = "nav navbar-nav navbar-right">
+               <li class = ""><a href = "#"><span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;Jupyter Notebook</a></li>
+               <li class = ""><a href = "#"><span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;About</a></li>
+            </ul>
+         </div>
+      </nav>
+      <div class="container">
+         <h1 align="center">The Safest and Least-Safest Areas</h1>
+
+         <h3 align="center">Top 3 Places with the Least Emergency Calls in January</h3>
+         <h4 align="center">Place, Number of Calls</h4>
+
+         <table align="center">
+            <tr>
+               <th>Location Grouping:</th>
+               <th>Zipcode</th>
+               <th>Battalion</th>
+               <th>Fire Prevention District</th>
+               <th>Station Area</th>
+               <th>Supervisor District</th>
+               <th>City</th>
+            </tr>
+            <tr>
+               <td>First</td>
+               <td>94129, 44</td>
+               <td>B99, 80</td>
+               <td>7, 548</td>
+               <td>20, 26</td>
+               <td>4, 365</td>
+               <td>Fort Mason, 5</td>
+            </tr>
+            <tr>
+               <td>Second</td>
+               <td>94130, 59</td>
+               <td>B07, 448</td>
+               <td>9, 709</td>
+               <td>48, 44</td>
+               <td>11, 392</td>
+               <td>Yerba Buena, 5</td>
+            </tr>
+            <tr>
+               <td>Third</td>
+               <td>94104, 75</td>
+               <td>B09, 709</td>
+               <td>8, 721</td>
+               <td>51, 57</td>
+               <td>1, 397</td>
+               <td>Hunters Point, 7</td>
+            </tr>
+         </table>
+         <br>
+         <p>We find that, even though Presidio (and its Battalion 99) has a very average response time, it's one of the safest places to live in San Francisco, having only 44 (.0044%) emergency calls of the 10,000 in SF in the month of January. 
+         <br>
+
+                  <h3 align="center">Top 3 Places with the Most Emergency Calls in January</h3>
+         <h4 align="center">Place, Number of Calls</h4>
+
+         <table align="center">
+            <tr>
+               <th>Location Grouping:</th>
+               <th>Zipcode</th>
+               <th>Battalion</th>
+               <th>Fire Prevention District</th>
+               <th>Station Area</th>
+               <th>Supervisor District</th>
+            </tr>
+            <tr>
+               <td>First</td>
+               <td>94102,    1347</td>
+               <td>B02,    1860</td>
+               <td>2,       2066</td>
+               <td>3,     1213</td>
+               <td>6,     2913</td>
+            </tr>
+            <tr>
+               <td>Second</td>
+               <td>94103,    1153</td>
+               <td>B03,    1701</td>
+               <td>3,       1494</td>
+               <td>1,      814</td>
+               <td>3,     1298</td>
+            </tr>
+            <tr>
+               <td>Third</td>
+               <td>94110,     796</td>
+               <td>B01,   1105</td>
+               <td>1,       1192</td>
+               <td>36,     652</td>
+               <td>5,    1015</td>
+            </tr>
+         </table>
+         <br>
+
+         <p>Zipcodes with most alarms: 94102: 148, 94103: 96, 94110: 75 <br>
+            Zipcodes with least alarms: 94104: 6, 94127: 3, 94130: 3 <br>
+            <br>
+            Zipcodes with most fires (Structure or Outside): 94102: 197, 94103: 9, 94117: 98 <br>
+            Zipcodes with least fires: 94131: 10, 94158: 3, 94130:  1 <br>
+            <br>
+            Zipcodes with least transportation incidents (Traffic Collisions, Train / Rail Incidents, Vehicle Fires): 94123: 3, 94127: 2, 94132: 2 <br>
+            Zipcodes with most transportation incidents: 94103: 66, 94105: 50, 94134: 37 <br>
+
+         <p>Shamikh Hossain</p>
+         <p>Contact information: <a href="mailto:ssh50@duke.edu">ssh50@duke.edu</a></p>
+      </div>
+   </body>
+</html>
