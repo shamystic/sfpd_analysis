@@ -34,7 +34,7 @@
       <li class = "active"><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Heatmaps</a></li>
       <li class = "active"><a href = "/sfpd_analysis/predict"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Predict Dispatch</a></li>
       <li class = ""><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-new-window" aria-hidden = "true"></span>&nbsp;Crime Correlation</a></li>
-      <li class = ""><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Dispatch Time</a></li>
+      <li class = ""><a href = "/sfpd_analysis/dispatch"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Dispatch Time</a></li>
       <li class = ""><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Future Preparation</a></li>
     </ul>
 
@@ -97,7 +97,7 @@
 
     <br>
    <p>  Outliers can be important though, so we'll do them next. <br>
-     I was surprised to see that when I used  <b>means </b> instead of medians, I saw a  <b>very different plot: </b>: 
+     I was surprised to see that when I used  <b>means </b> instead of medians, I saw a  <b>very different plot</b>: 
 
     <div align="center"><img src = 'assets/zipcode_response_mean.png' width="100%" height="100%"></div>
 
@@ -126,7 +126,7 @@
     <p> It turns out that <b>94127</b> is <b>almost completely enclosed by mountainous terrain</b>, and contains some itself. This definitely adds <b>complexity</b> in <b>physically reaching</b> emergencies in 94127- more mountainous land can mean more detours, more roundabout roads, and <b>on average a longer and slower-speed trip than a flatter region</b>. This can help explain why we see a lot of extremely high response time outliers when considering this zipcode, which explains the <b>vast difference</b> between the mean, which is sensitive to outliers, and the median. 
     <br> <br> 
 
-    For the other zipcodes whose means differed,<b> 94104, 94108, 94111, and 94133</b> officially make up SF's crowded <b>Financial District</b>, home to the city's <b>largest concentration </b> of corporate headquarters, firms and financial institutions. <b>94105</b> and <b>94111</b> are in crowded downtown San Francisco, at or near the Financial District. For these zipcodes, high amounts of <b>traffic</b> can possibly be <b>impacting response time</b>, increasing the variance and mean. 
+    For the other zipcodes whose means differed,<b> 94104, 94108, 94111, and 94133</b> officially make up SF's crowded <b>Financial District</b>, home to the city's <b>largest concentration </b> of corporate headquarters, firms and financial institutions. <b>94102, 94103, 94105</b> and <b>94111</b> are in crowded downtown San Francisco, at or near the Financial District. For these zipcodes, high amounts of <b>traffic</b> can possibly be <b>impacting response time</b>, increasing the variance and mean. 
 
   <br> <br><br> <br>
     <div id="time"> <h1>2. The Effect of Time of Day</h1></div>
