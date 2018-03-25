@@ -1,63 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>SFPD Dispatch Analysis</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/style.css"/>
-
-  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/sfpd_analysis/index">SFPD Dispatch Analysis</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class = ""><a href="/sfpd_analysis/index"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Home</a></li>
-
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Trends
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Trend 1</a></li>
-          <li><a href="#">Trend 2</a></li>
-          <li><a href="#">Trend 3</a></li>
-        </ul>
-      </li>
-
-      <li class = "active"><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Heatmaps</a></li>
-      <li class = ""><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-new-window" aria-hidden = "true"></span>&nbsp;Crime Correlation</a></li>
-      <li class = ""><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Dispatch Time</a></li>
-      <li class = ""><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Future Preparations</a></li>
-    </ul>
-
-    <ul class = "nav navbar-nav navbar-right">
-      <li class = ""><a href = "#"><span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;About</a></li>
-    </ul>
-  </div>
-</nav>
-  
-<div class="container" align="center">
-  <h3>All Data Points</h3>
-
-                  <div align="center"> 
-                <div class='tableauPlaceholder' id='viz1521833482157' style='position: relative'><noscript><a href='#'><img alt='Emergency Call Points ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PointMapSF&#47;EmergencyCallPoints&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='PointMapSF&#47;EmergencyCallPoints' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PointMapSF&#47;EmergencyCallPoints&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1521833482157');                    var vizElement = divElement.getElementsByTagName('object')[0];                      vizElement.style.width='900px';vizElement.style.height='600px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                </div>
-
-                <br>
-  <h3>Heatmap 1: All Data Points</h3>
-  <p> Redder color represents greater concentration of emergency calls observed from that area. </p>
-
-<img src="assets/heatmap.png" alt="SFPD calls Heatmap" width="50%" height="50%">
-  </p>
-</div>
-
-</body>
+   <head>
+      <title>SFPD Dispatch Analysis</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/style.css" />
+      <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <a class="navbar-brand" href="/sfpd_analysis/index">SFPD Dispatch Analysis</a>
+            </div>
+            <ul class="nav navbar-nav">
+               <li class=""><a href="/sfpd_analysis/index"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Home</a></li>
+               <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Trends
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="#">Trend 1</a></li>
+                     <li><a href="#">Trend 2</a></li>
+                     <li><a href="#">Trend 3</a></li>
+                  </ul>
+               </li>
+               <li class="active"><a href="/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Heatmaps</a></li>
+               <li class=""><a href="/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-new-window" aria-hidden = "true"></span>&nbsp;Crime Correlation</a></li>
+               <li class=""><a href="/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Dispatch Time</a></li>
+               <li class=""><a href="/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Future Preparations</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+               <li class=""><a href="#"><span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;About</a></li>
+            </ul>
+         </div>
+      </nav>
+      <div class="container" align="center">
+         <h3>Most heatmaps will attest that a vast majority of emergency calls come from urban northeast SF, as seen in the following visualization.</h3>
+         <h3>All Data Points</h3>
+         <div align="center">
+            <div class='tableauPlaceholder' id='viz1521833482157' style='position: relative'>
+               <noscript>
+                  <a href='#'><img alt='Emergency Call Points ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PointMapSF&#47;EmergencyCallPoints&#47;1_rss.png' style='border: none' /></a>
+               </noscript>
+               <object class='tableauViz' style='display:none;'>
+                  <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                  <param name='embed_code_version' value='3' />
+                  <param name='site_root' value='' />
+                  <param name='name' value='PointMapSF&#47;EmergencyCallPoints' />
+                  <param name='tabs' value='no' />
+                  <param name='toolbar' value='yes' />
+                  <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PointMapSF&#47;EmergencyCallPoints&#47;1.png' />
+                  <param name='animate_transition' value='yes' />
+                  <param name='display_static_image' value='yes' />
+                  <param name='display_spinner' value='yes' />
+                  <param name='display_overlay' value='yes' />
+                  <param name='display_count' value='yes' />
+               </object>
+            </div>
+            <script type='text/javascript'>
+               var divElement = document.getElementById('viz1521833482157');
+               var vizElement = divElement.getElementsByTagName('object')[0];
+               vizElement.style.width = '900px';
+               vizElement.style.height = '600px';
+               var scriptElement = document.createElement('script');
+               scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+               vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+         </div>
+         <br>
+         <h3>Heatmaps of Dispatch Data</h3>
+         <p>Some incidents were infrequent enough as to plot their actual points.</p>
+         <h3>All Data Points</h3>
+         <p>Redder color represents greater concentration of emergency calls observed from that area. </p>
+         <img src="assets/heatmap.png" alt="SFPD calls Heatmap" width="70%" height="70%">
+         <h3>Calls by Response Time</h3>
+         <h4>Time to arrive on scene after call is received</h4> 
+         <h4>Green - Less than 20 minutes to respond<br>Red - 20 minutes or more to respond </h4>
+         <img src="assets/20_heatmap.PNG" alt="SFPD calls Heatmap" width="70%" height="70%">
+         <br>
+         <br>
+         <h3>Call Type - Medical Emergency</h3>
+         <img src="assets/medical_heat.PNG" alt="SFPD calls Heatmap" width="70%" height="70%">
+         <br>
+         <br>
+         <h3>Call Final Disposition -  Fire</h3>
+         <img src="assets/call_final_fire.PNG" alt="SFPD calls Heatmap" width="70%" height="70%">
+         <br>
+         <br>
+         <h3>Call Type - Alarms</h3>
+         <img src="assets/alarms_points.PNG" alt="SFPD calls Heatmap" width="70%" height="70%">
+         <br>
+         <br>
+         <h3>Call Type - Potential Life-Threatening</h3>
+         <img src="assets/Life_Threatening_heat.PNG" alt="SFPD calls Heatmap" width="70%" height="70%">
+         <br>
+         <br>
+         <h3>Call Type - Non-life Threatening</h3>
+         <img src="assets/nonlifethreatening.PNG" alt="SFPD calls Heatmap" width="70%" height="70%">
+         <br>
+         <br>
+         <h3>Calls That Emergency Responders were Unable to Locate</h3>
+         <img src="assets/unablelocate.PNG" alt="SFPD calls Heatmap" width="70%" height="70%">
+         <br>
+         <br>
+         <h3>Calls in Late Night Hours (12 AM to 7 AM)</h3>
+         <img src="assets/Late_Night_heat.PNG" alt="SFPD calls Heatmap" width="70%" height="70%">
+         <br>
+         <br>
+         </p>
+      </div>
+   </body>
 </html>
-

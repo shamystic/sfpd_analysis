@@ -1,157 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>SFPD Dispatch Analysis</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/style.css"/>
-
-  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/sfpd_analysis/index">SFPD Dispatch Analysis</a>
-    </div>
-    <ul class="nav navbar-nav">
-<!--       <li class = ""><a href="/sfpd_analysis/index"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Home</a></li>
- -->
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Trends
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="/sfpd_analysis/index#location">Effect of Location</a></li>
-          <li><a href="/sfpd_analysis/index#time">Effect of Time of Day</a></li>
-          <li><a href="/sfpd_analysis/index#income">Effect of Income</a></li>
-        </ul>
-      </li>
-
-      <li class = "active"><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Heatmaps</a></li>
-      <li class = "active"><a href = "/sfpd_analysis/predict"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Predict Dispatch</a></li>
-      <li class = ""><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-new-window" aria-hidden = "true"></span>&nbsp;Crime Correlation</a></li>
-      <li class = ""><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Dispatch Time</a></li>
-      <li class = ""><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Future Preparation</a></li>
-    </ul>
-
-    <ul class = "nav navbar-nav navbar-right">
-      <li class = ""><a href = "#"><span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;Jupyter Notebook</a></li>
-      <li class = ""><a href = "#"><span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;About</a></li>
-    </ul>
-  </div>
-</nav>
-  
-  
-<div class="container">
-  <h1>Which areas take the longest to dispatch to, on average?</h1>
-
-
-    <h2 align="center">Top 3 Longest Dispatch Time Locations</h2>
-    <table align="center">
-      <tr>
-        <th>Location Grouping:</th>
-        <th>Zipcode</th>
-        <th>Battalion</th>
-        <th>Fire Prevention District</th>
-        <th>Station Area</th>
-        <th>Supervisor District</th>
-        <th>City</th>
-        <th>Box</th>
-      </tr>
-      <tr>   
-        <td>First</td>
-        <td>94127, 45.32 min</td>
-        <td>B99, 14.44 min</td>
-        <td>8, 14.50 min</td>
-        <td>39, 38.26 min</td>
-        <td>7, 16.26 min</td>
-        <td>Presidio, 14.91 min</td>
-        <td>8611, 92.71</td>
-      </tr>
-      <tr>
-        <td>Second</td>
-        <td>94105, 19.02 min</td>
-        <td>B08, 14.15 min</td>
-        <td>3, 11.585 min</td>
-        <td>13, 15.32 min</td>
-        <td>6, 10.415 min</td>
-        <td>Hunters Point, 12.00 min</td>
-        <td>6344, 60.20</td>
-      </tr>
-      <tr>
-        <td>Third</td>
-        <td>94129, 15.55 min</td>
-        <td>B03, 11.66 min</td>
-        <td>9, 10.71 min</td>
-        <td>42, 12.32 min</td>
-        <td>11, 10.36 min</td>
-        <td>Treasure Isla, 11.62 min</td>
-        <td>6664, 32.53</td>
-      </tr>
-    </table>
-
-    <br>
-    <p>Dispatch time is the <b>difference</b> in minutes between when the <b>call was received</b>, and when the responders <b>arrive on scene</b>. 
-    <br>
-    <b>Means</b> were used to compute averages; for completeness medians and means were plotted below for each location type, as they can lead to different answers- mean is particularly sensitive to outliers, which are very much present.
-
-
-    <h2>How can this be reduced?</h2>
-    <p>
-      <h2>1. Route optimization and shortcuts, especially for urban and tough terrain areas.</h2> <p>We saw earlier that some of the hardest to reach areas are highly urbanized and concentrated, such as the Financial District and Downtown. Factors such as crowdiness and traffic are outside of the control of emergency responders, but work can be put into find possible driving shortcuts to destinations in the highly urban districts, as they are often the most troubled- For example, zipcode 94102 had the most emergency calls, and 94105 faced one of the slowest response times- both are in downtown SF. <br>
-      → It is crucial to know the best way around tough terrain. The top three hardest boxes to reach, 8611 (Twin Peaks area), 6344 (John McLaren Park area) and 6664 (Hunter's Point) are all inside or surrounded by mountainous terrain, so its definitely having an impact. If possible, detours and shortcuts to avoid slow-speed passages or roundabouts are essential to know of beforehand. </p>
-
-      <div align="center"><img src = 'assets/terrain2.PNG' width="50%" height="50%"></div>
-
-      <h2>2. Enhanced mobilization of night responders.</h2>
-      <p>From the Trend of Time of Day, we saw that late night responders take a longer time to respond to a dispatch notice than their daylight counterparts. While this is only natural, better effort to ensure that night responders are well-rested and prepared for their night shift can help reduce dispatch times. 
-     <div align="center"><img src = 'assets/box.png' width="60%" height="60%"></div>
-
-
-      <h2>3. Increasing awareness of alternate emergency services.</h2>
-      <p> I noticed that Presidio, the city with the slowest average response time (and containing zipcode 94129, slowest median response time of any zipcode), is a unique location as it is actually a National Park, with many wooded areas and hills: 
-      <div align="center"><img src = 'assets/Presidio.PNG' width="50%" height="50%"></div>
-      <br>
-      <p> Why is it that SFPD takes so long to get there? <br>
-      It turns out that Presidio actually maintains its own Emergency Services systems, separate from typical SFPD- it is served by the United States Park Police due to its status as a national park site, and the San Francisco Fire Department (SFFD). As such, it actually maintains its own emergency call hotline, and indicates on their <a href="https://www.presidio.gov/presidio-trust/about/emergency-services">website</a>:
-      <div align="center"><img src = 'assets/p_hotline1.PNG' width="50%" height="50%"></div>
-      <div align="center"><img src = 'assets/p_hotline2.PNG' width="70%" height="70%"></div>
-      <br>
-      <p>A possible cause for extremely high response times to Presidio is that people in emergencies are not calling the <a href = "https://www.nps.gov/prsf/learn/historyculture/fire-station.htm">Presidio service</a> and instead are calling 911 by cell phone, directing their calls to regular SFPD dispatch centers outside Presidio- a very natural and wooded region that is probably hard to navigate from the outside, especially by those unfamiliar with it, like non-Presidio police. 
-      <br> So increasing awareness of the separate number for emergency services directly serving Presidio and similarly unique regions would most likely help reduce the high response time and increase efficiency of emergency handling overall. 
-
-
-
-
-      <div align="center"><img src = 'assets/mean_battalion_response.png' width="80%" height="80%"></div>
-      <div align="center"><img src = 'assets/median_battalion_response.png' width="80%" height="80%"></div>
-
-
-      <div align="center"><img src = 'assets/mean_sa_response.png' width="80%" height="80%"></div>  
-      <div align="center"><img src = 'assets/median_sa_response.png' width="80%" height="80%"></div>  
-
-
-      <div align="center"><img src = 'assets/mean_zipcode_response.png' width="80%" height="80%"></div>
-      <div align="center"><img src = 'assets/median_zipcode_response.png' width="80%" height="80%"></div>
-
-      <div align="center"><img src = 'assets/mean_fpd_response.png' width="80%" height="80%"></div>
-      <div align="center"><img src = 'assets/median_fpd_response.png' width="80%" height="80%"></div>
-
-      <div align="center"><img src = 'assets/mean_sd_response.png' width="80%" height="80%"></div>
-      <div align="center"><img src = 'assets/median_sd_response.png' width="80%" height="80%"></div>
- 
-  <br>
-  <p>Shamikh Hossain</p>
-  <p>Contact information: <a href="mailto:ssh50@duke.edu">ssh50@duke.edu</a></p>
-
-
-
-
-
-</div>
-</body>
+   <head>
+      <title>SFPD Dispatch Analysis</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/style.css" />
+      <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <a class="navbar-brand" href="/sfpd_analysis/index">SFPD Dispatch Analysis</a>
+            </div>
+            <ul class="nav navbar-nav">
+               <!--       <li class = ""><a href="/sfpd_analysis/index"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Home</a></li>
+                  -->
+               <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Trends
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="/sfpd_analysis/index#location">Effect of Location</a></li>
+                     <li><a href="/sfpd_analysis/index#time">Effect of Time of Day</a></li>
+                     <li><a href="/sfpd_analysis/index#income">Effect of Income</a></li>
+                  </ul>
+               </li>
+               <li class="active"><a href="/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Heatmaps</a></li>
+               <li class="active"><a href="/sfpd_analysis/predict"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Predict Dispatch</a></li>
+               <li class=""><a href="/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-new-window" aria-hidden = "true"></span>&nbsp;Crime Correlation</a></li>
+               <li class=""><a href="/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Dispatch Time</a></li>
+               <li class=""><a href="/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;Future Preparation</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+               <li class=""><a href="#"><span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;Jupyter Notebook</a></li>
+               <li class=""><a href="#"><span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;About</a></li>
+            </ul>
+         </div>
+      </nav>
+      <div class="container">
+         <h1>Which areas take the longest to dispatch to, on average?</h1>
+         <h2 align="center">Top 3 Longest Dispatch Time Locations</h2>
+         <table align="center">
+            <tr>
+               <th>Location Grouping:</th>
+               <th>Zipcode</th>
+               <th>Battalion</th>
+               <th>Fire Prevention District</th>
+               <th>Station Area</th>
+               <th>Supervisor District</th>
+               <th>City</th>
+               <th>Box</th>
+            </tr>
+            <tr>
+               <td>First</td>
+               <td>94127, 45.32 min</td>
+               <td>B99, 14.44 min</td>
+               <td>8, 14.50 min</td>
+               <td>39, 38.26 min</td>
+               <td>7, 16.26 min</td>
+               <td>Presidio, 14.91 min</td>
+               <td>8611, 92.71</td>
+            </tr>
+            <tr>
+               <td>Second</td>
+               <td>94105, 19.02 min</td>
+               <td>B08, 14.15 min</td>
+               <td>3, 11.585 min</td>
+               <td>13, 15.32 min</td>
+               <td>6, 10.415 min</td>
+               <td>Hunters Point, 12.00 min</td>
+               <td>6344, 60.20</td>
+            </tr>
+            <tr>
+               <td>Third</td>
+               <td>94129, 15.55 min</td>
+               <td>B03, 11.66 min</td>
+               <td>9, 10.71 min</td>
+               <td>42, 12.32 min</td>
+               <td>11, 10.36 min</td>
+               <td>Treasure Isla, 11.62 min</td>
+               <td>6664, 32.53</td>
+            </tr>
+         </table>
+         <br>
+         <p>Dispatch time is the <b>difference</b> in minutes between when the <b>call was received</b>, and when the responders <b>arrive on scene</b>.
+            <br>
+            <b>Means</b> were used to compute averages; for completeness medians and means were plotted below for each location type, as they can lead to different answers- mean is particularly sensitive to outliers, which are very much present.
+         <h2>How can this be reduced?</h2>
+         <p>
+         <h2>1. Route optimization and shortcuts, especially for urban and tough terrain areas.</h2>
+         <p>We saw earlier that some of the hardest to reach areas are highly urbanized and concentrated, such as the Financial District and Downtown. Factors such as crowdiness and traffic are outside of the control of emergency responders, but work can be put into find possible driving shortcuts to destinations in the highly urban districts, as they are often the most troubled- For example, zipcode 94102 had the most emergency calls, and 94105 faced one of the slowest response times- both are in downtown SF.
+            <br> → It is crucial to know the best way around tough terrain. The top three hardest boxes to reach, 8611 (Twin Peaks area), 6344 (John McLaren Park area) and 6664 (Hunter's Point) are all inside or surrounded by mountainous terrain, so its definitely having an impact. If possible, detours and shortcuts to avoid slow-speed passages or roundabouts are essential to know of beforehand. 
+         </p>
+         <div align="center"><img src='assets/terrain2.PNG' width="50%" height="50%"></div>
+         <h2>2. Enhanced mobilization of night responders.</h2>
+         <p>From the Trend of Time of Day, we saw that late night responders take a longer time to respond to a dispatch notice than their daylight counterparts. While this is only natural, better effort to ensure that night responders are well-rested and prepared for their night shift can help reduce dispatch times.
+         <div align="center"><img src='assets/box.png' width="60%" height="60%"></div>
+         <h2>3. Increasing awareness of alternate emergency services.</h2>
+         <p> I noticed that Presidio, the city with the slowest average response time (and containing zipcode 94129, slowest median response time of any zipcode), is a unique location as it is actually a National Park, with many wooded areas and hills:
+         <div align="center"><img src='assets/Presidio.PNG' width="50%" height="50%"></div>
+         <br>
+         <p> Why is it that SFPD takes so long to get there?
+            <br> It turns out that Presidio actually maintains its own Emergency Services systems, separate from typical SFPD- it is served by the United States Park Police due to its status as a national park site, and the San Francisco Fire Department (SFFD). As such, it actually maintains its own emergency call hotline, and indicates on their <a href="https://www.presidio.gov/presidio-trust/about/emergency-services">website</a>:
+         <div align="center"><img src='assets/p_hotline1.PNG' width="50%" height="50%"></div>
+         <div align="center"><img src='assets/p_hotline2.PNG' width="70%" height="70%"></div>
+         <br>
+         <p>A possible cause for extremely high response times to Presidio is that people in emergencies are not calling the <a href="https://www.nps.gov/prsf/learn/historyculture/fire-station.htm">Presidio service</a> and instead are calling 911 by cell phone, directing their calls to regular SFPD dispatch centers outside Presidio- a very natural and wooded region that is probably hard to navigate from the outside, especially by those unfamiliar with it, like non-Presidio police.
+            <br> So increasing awareness of the separate number for emergency services directly serving Presidio and similarly unique regions would most likely help reduce the high response time and increase efficiency of emergency handling overall.
+         <div align="center"><img src='assets/mean_battalion_response.png' width="80%" height="80%"></div>
+         <div align="center"><img src='assets/median_battalion_response.png' width="80%" height="80%"></div>
+         <div align="center"><img src='assets/mean_sa_response.png' width="80%" height="80%"></div>
+         <div align="center"><img src='assets/median_sa_response.png' width="80%" height="80%"></div>
+         <div align="center"><img src='assets/mean_zipcode_response.png' width="80%" height="80%"></div>
+         <div align="center"><img src='assets/median_zipcode_response.png' width="80%" height="80%"></div>
+         <div align="center"><img src='assets/mean_fpd_response.png' width="80%" height="80%"></div>
+         <div align="center"><img src='assets/median_fpd_response.png' width="80%" height="80%"></div>
+         <div align="center"><img src='assets/mean_sd_response.png' width="80%" height="80%"></div>
+         <div align="center"><img src='assets/median_sd_response.png' width="80%" height="80%"></div>
+         <br>
+         <p>Shamikh Hossain</p>
+         <p>Contact information: <a href="mailto:ssh50@duke.edu">ssh50@duke.edu</a></p>
+      </div>
+   </body>
 </html>
