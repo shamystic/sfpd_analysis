@@ -41,18 +41,18 @@
 
       <div class="container">
          <h1>Exploring SFPD Dispatch Data</h1>
-         <p>The SFPD Dispatch dataset contains <b>emergency dispatch information</b> for 10,000 emergency calls from January 2018. This site highlights some findings from this dataset- full data analysis code can be found in the Jupyter Notebook linked above. 
+         <p>The SFPD Dispatch dataset contains <b>emergency dispatch information</b> for 10,000 emergency calls from January 2018. This site highlights some findings from this dataset, and attempts to use these findings to outline solution steps to improve emergency response across San Francisco. All data analysis code used can be found in the Jupyter Notebook linked to in the top right. 
             <br>
             <br>
             Let's start with the fundamental questions:
          <h2>Which <b>areas</b> had the <b>most emergencies? </b></h2>
          <p>→ Here's a sorted bar plot of <b>frequency</b> by <b>zipcode:</b></p>
          <div align="center"><img src = 'assets/zip_counts.png' width="100%" height="100%"></div>
-         <p> More on locational data can be found in Crime Correlation.</p>
+         <p> More on locational data can be found in <a href = "https://shamystic.github.io/sfpd_analysis/crime_correlation">Crime Correlation</a>.</p>
          <br>
          <br>
          <h2>Which <b>times</b> of the day had the <b>most emergencies? </b></h2>
-         <p>→ Hours in the <b>late afternoon</b> and <b>evening</b> have the <b>most</b> emergencies (24 hour time- 16 represents 4 PM):</p>
+         <p>→ Hours in the <b>late afternoon</b> and <b>evening</b> have the <b>most</b> emergencies (this is 24 hour time, so '16' represents 4 PM):</p>
          <div align="center"><img src = 'assets/hour_counts.png' width="80%" height="80%"></div>
          <br>
          <br>
@@ -84,7 +84,7 @@
          </table>
          <br>
          <p>  Outliers can be important though, so we'll do them next. <br>
-            I was surprised to see that when I used  <b>means </b> instead of medians, I saw a  <b>very different plot</b>: 
+           It's interesting to see that when <b>means </b> are used instead of medians, we see  <b>very different plot</b>: 
          <div align="center"><img src = 'assets/zipcode_response_mean.png' width="100%" height="100%"></div>
          <h2 align="center">Highest Average (Mean) Response Times By Zipcode</h2>
          <table align="center">
@@ -102,14 +102,14 @@
             </tr>
          </table>
          <br>
-         <p><b> What's going on zipcode 94127? </b> It seems to have an  <b>absurdly high response time </b> on average- its population is just 20,624, so it's definitely not overcrowded. It's also the wealthiest zipcode in our study, with a median household income of $95,313, which makes this even stranger. <br>
-            Let's take a look at a terrain map of San Francisco - zipcode 94127 is highlighted in red:
-            <br> 
+         <p>This is strange- <b> what's going on zipcode 94127? </b> It seems to have an  <b>absurdly high response time </b> on average- its population is just 20,624, so it's definitely not overcrowded. It's also the wealthiest zipcode in our study, with a median household income of $95,313, which makes this even stranger. <br>
+            Let's take a look at a terrain map of San Francisco - zipcode 94127 is shown highlighted in red:
+            <br>  <br> 
          <div align="center"><a  href="https://www.google.com/maps/place/San+Francisco,+CA+94127/@37.7378077,-122.4544793,13.46z/data=!4m5!3m4!1s0x808f7d948d5bdc2b:0xcf1e96d1394fc506!8m2!3d37.734646!4d-122.463708!5m1!1e4" target="_blank"><img src = 'assets/terrain.png' width="50%" height="50%"></a></div>
          <br>
          <p> It turns out that <b>94127</b> is <b>almost completely enclosed by mountainous terrain</b>, and contains some itself. This definitely adds <b>complexity</b> in <b>physically reaching</b> emergencies in 94127- more mountainous land can mean more detours, more roundabout roads, and <b>on average a longer and slower-speed trip than a flatter region</b>. This can help explain why we see a lot of extremely high response time outliers when considering this zipcode, which explains the <b>vast difference</b> between the mean, which is sensitive to outliers, and the median. 
             <br> <br> 
-            For the other zipcodes whose means differed,<b> 94104, 94108, 94111, and 94133</b> officially make up SF's crowded <b>Financial District</b>, home to the city's <b>largest concentration </b> of corporate headquarters, firms and financial institutions. <b>94102, 94103, 94105</b> and <b>94111</b> are in crowded downtown San Francisco, at or near the Financial District. For these zipcodes, high amounts of <b>traffic</b> can possibly be <b>impacting response time</b>, increasing the variance and mean. We explore zipcode 94129 in <a href="https://shamystic.github.io/sfpd_analysis/dispatch">Dispatch Time</a>.
+            For the other zipcodes whose means differed,<b> 94104, 94108, 94111, and 94133</b> officially make up SF's crowded <b>Financial District</b>, home to the city's <b>largest concentration </b> of corporate headquarters, firms and financial institutions. <b>94102, 94103, 94105</b> and <b>94111</b> are in crowded downtown San Francisco, at or near the Financial District. For these zipcodes, high amounts of <b>traffic</b> can possibly be <b>impacting response time</b>, increasing the variance and mean. We'll explore zipcode 94129 more in <a href="https://shamystic.github.io/sfpd_analysis/dispatch">Dispatch Time</a>.
             <br> <br><br> <br>
          <div id="time">
             <h1>2. The Effect of Time of Day</h1>
@@ -157,13 +157,13 @@
             <h1>3. The Effect of Income</h1>
          </div>
          <h2>How does the <b>response</b> and <b>arrival time</b> differ for <b>wealthier</b> and <b>poorer</b> areas?</h2>
-         <p> To answer this, we consult outside data on <b>median household incomes</b> for SF zipcodes. We can categorize each by quartile of annual household income. 
+         <p> To answer this, we consult outside data on <b>median household incomes</b> for SF zipcodes. We can categorize each zipcode into quartiles of annual household income: 0 - $25k, $25k - $50k, and so on. 
             <br>
             → We find that emergency responders in SF actually take <b>longer</b> to both <b>react to dispatches</b> to <b>wealthier</b> zipcodes and to <b>arrive on scene to their emergencies</b>. This was surprising, especially after reading studies such as <b><a href = "http://www.naemsp.org/Documents/2017%20Annual%20Meeting%20Handouts/3%20THURS%20Presentation7.pdf">this</a></b> and <b><a href = "https://www.bridgemi.com/detroit-journalism-cooperative/detroit-police-improve-response-times-not-all-neighborhoods-are-equal">this</a></b>.
          <p>Here are boxplots of the time in minutes needed for responders to declare that they're <b>en route</b> to the emergency, for each income quartile:</p>
          <div align="center"><img src = 'assets/box_income.png' width="80%" height="80%"></div>
          <br>
-         <p>Here's the <b>median time</b> (robust to outliers) needed for responders to declare that they're en route by income quartile:</p>
+         <p>Here's the <b>median time</b> (robust to outliers) needed for responders to <b>declare that they're en route</b> by income quartile:</p>
          <div align="center"><img src = 'assets/incomebands2.png' width="60%" height="60%"></div>
          <br>
          <p>Here's the <b>median time</b> needed for responders to <b>arrive on scene</b> to the emergency:</p>
