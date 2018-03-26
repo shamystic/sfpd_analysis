@@ -1,21 +1,77 @@
 
 
-About 
-This website was created by Shamikh Hossain in March 2018 as part of the Capital One MindSumo computer science challenge found here. 
 
 
-Sources 
-1. http://www.naemsp.org/Documents/2017%20Annual%20Meeting%20Handouts/3%20THURS%20Presentation7.pdf
-2. https://www.bridgemi.com/detroit-journalism-cooperative/detroit-police-improve-response-times-not-all-neighborhoods-are-equal
-3. https://www.citylab.com/equity/2015/08/mapping-gentrification-and-displacement-in-san-francisco/402559/
-4. http://zipatlas.com/us/ca/san-francisco/zip-code-comparison/median-household-income.htm
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>SFPD Dispatch Analysis</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <a class="navbar-brand" href="/sfpd_analysis/index">SFPD Dispatch Analysis</a>
+            </div>
+            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class = "glyphicon glyphicon-blackboard" aria-hidden = "true"></span>&nbsp;Trends
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="/sfpd_analysis/index#location">Effect of Location</a></li>
+                     <li><a href="/sfpd_analysis/index#time">Effect of Time of Day</a></li>
+                     <li><a href="/sfpd_analysis/index#income">Effect of Income</a></li>
+                  </ul>
+               </li>
+               <li class = "active"><a href = "/sfpd_analysis/heatmaps"><span class = "glyphicon glyphicon-globe" aria-hidden = "true"></span>&nbsp;Heatmaps</a></li>
+               <li class = "active"><a href = "/sfpd_analysis/predict"><span class = "glyphicon glyphicon-stats" aria-hidden = "true"></span>&nbsp;Predict Emergency</a></li>
+               <li class = ""><a href = "/sfpd_analysis/crime_correlation"><span class = "glyphicon glyphicon-map-marker" aria-hidden = "true"></span>&nbsp;Crime Correlation</a></li>
+               <li class = ""><a href = "/sfpd_analysis/dispatch"><span class = "glyphicon glyphicon-time" aria-hidden = "true"></span>&nbsp;Dispatch Time</a></li>
+               <li class = ""><a href = "/sfpd_analysis/future"><span class = "glyphicon glyphicon-road" aria-hidden = "true"></span>&nbsp;Future Preparation</a></li>
+            </ul>
+            <ul class = "nav navbar-nav navbar-right">
+               <li class = ""><a href = "/sfpd_analysis/sfpd_analysis_notebook" target="_blank"><span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;Jupyter Notebook</a></li>
+               <li class = ""><a href = "/sfpd_analysis/about"><span class = "glyphicon glyphicon-user" aria-hidden = "true"></span>&nbsp;About</a></li>
+            </ul>
+         </div>
+      </nav>
+      <div class="container">
+         <h1 align="center">About</h1>
+
+ 
+		<p>This website was created by Shamikh Hossain in March 2018 as part of the Capital One MindSumo computer science challenge found <a href = "https://www.mindsumo.com/contests/sfpd-dispatch" target="_blank">here</a>. 
 
 
-Technologies Used 
-This work would not be possible without amazing and free open-source data science libraries and front-end development tools. 
+			<h2>Sources</h2> 
+			<p>1. http://www.naemsp.org/Documents/2017%20Annual%20Meeting%20Handouts/3%20THURS%20Presentation7.pdf <br>
+			2. https://www.bridgemi.com/detroit-journalism-cooperative/detroit-police-improve-response-times-not-all-neighborhoods-are-equal<br>
+			3. https://www.citylab.com/equity/2015/08/mapping-gentrification-and-displacement-in-san-francisco/402559/<br>
+			4. http://zipatlas.com/us/ca/san-francisco/zip-code-comparison/median-household-income.htm<br></p>
 
-1. HTML/CSS/JavaScript + Bootstrap for website creation 
-2. Python for Data Science stack for data analysis (jupyter notebook, numpy, pandas)
-3. Tableau, matplotlib, and seaborn for data visualization 
-4. Google Maps API for heatmaps
 
+			<h2>Technologies Used </h2>
+			<p>This work would not be possible without amazing and free open-source data science libraries and front-end development tools. <br>
+
+
+			1. Python for Data Science ecosystem for data analysis (jupyter notebook, numpy, pandas)<br>
+			2. Tableau, matplotlib, and seaborn for data visualization <br>
+			3. Google Maps API for heatmaps<br>
+			4. HTML/CSS/JavaScript + Bootstrap for website creation <br><br>
+		
+			Here's the <a href="https://github.com/shamystic/sfpd_analysis" target="_blank">GitHub repository.</a> Thanks for viewing!<br>
+			</p>
+			</p>
+			<br><br>
+         <p>Shamikh Hossain</p>
+         <p>Here are some of my other <a href="https://sites.google.com/view/shamystic/" target="_blank">projects.</a></p>
+         <p>Contact information: <a href="mailto:ssh50@duke.edu">ssh50@duke.edu</a></p>
+      </div>
+   </body>
+</html>
