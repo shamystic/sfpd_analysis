@@ -87,14 +87,14 @@
       </nav>
       <div class="container" align="center">
         <h1>Predicting Type of Emergency</h1> 
-        <h2>If we get an emergency call from a specific area at a specific time, can we approximate what emergency it could be?</h2>
-        <p>If we roughly equate the proportional frequencies of emergency call types in January to likelihood, we can approximate the likeliest type of emergency in a given area in a given time of day. Technical details of how this was done can be found in the Jupyter Notebook linked above, but essentially we filter the data to the desired parameters of location and time without making it to granularly specific, and then go off of that observed frequency. <br> <br>
-        For each of the three applets below, simply choose an area and a time from the drop downs, and click "Predict" to observe what our knowledge of the month of January tells us about the top three most likely emergencies to occur. 
+        <h2>If we get an emergency call from a <b>specific area</b> at a <b>specific time</b>, can we approximate <b>what emergency it could be?</b></h2>
+        <p>If we roughly equate the proportional frequencies of emergency call types in January to likelihood, we can approximate the likeliest type of emergency in a given area in a given time of day. Technical details of how this was done can be found in the <a href="https://shamystic.github.io/sfpd_analysis/sfpd_analysis_notebook">Jupyter Notebook</a> above, but essentially we filter the data to the desired parameters of location and time without making it to granularly specific, and then go off of that observed frequency. <br> <br>
+        For each of the three applets below, simply <b>choose an area</b> and a <b>time</b> from the drop downs, and <b>click "Predict"</b> to observe what our <b>knowledge of the month of January</b> tells us about the <b>top three most likely emergencies</b> to occur. 
 
         </p>
 
-        <h2>Predicting with Zipcode and Day Portion of Call Received</h2> 
-        <p>Day portions are groupings of similar hours of the day- 12 AM to 7 AM is late night hours, 8 AM to 3 PM is morning to late afternoon, and 4 PM to 11 PM is late evening to night hours. </p>
+        <h2>Predicting with <b>Zipcode</b> and <b>Day Portion</b> of Call Received</h2> 
+        <p><b>Day portions</b> are groupings of similar hours of the day- 12 AM to 7 AM is late night hours, 8 AM to 3 PM is morning to late afternoon, and 4 PM to 11 PM is late evening to night hours. </p>
          <h4>Zipcode:</h4><select id="Zipcode">
             <option value="0" selected="selected">94102</option>
             <option value="1">94103</option>
@@ -135,8 +135,8 @@
          <p id="result"></p>
 
 
-        <h2>Predicting with Zipcode and Specific Hour the Call was Received</h2> 
-        <p>Here we try a second prediction technique in which we select the precise hour at which the call was received, instead of the broader day portion.</p>
+        <h2>Predicting with <b>Zipcode</b> and Specific <b>Hour</b> the Call was Received</h2> 
+        <p>Here we try a second prediction technique in which we select the <b>precise hour</b> at which the call was received, instead of the broader day portion.</p>
 
             <h4>Zipcode:</h4><select id="Zipcode_2">
             <option value="0" selected="selected">94102</option>
@@ -200,8 +200,8 @@
 
 
 
-        <h2>Predicting with Station Area and Day Portion of Call Received</h2> 
-        <p>Here we try a third  technique in which we select more granular location; station area rather than the slightly larger zipcodes. The time option remains in day portions to avoid the issue of too few samples in observed data. </p>
+        <h2>Predicting with <b>Station Area</b> and <b>Day Portion</b> of Call Received</h2> 
+        <p>Here we try a third technique in which we select more granular location; <b>station area</b> rather than the slightly larger zipcodes. The time option remains in day portions to avoid the issue of too few samples in observed data. </p>
 
             <h4>Station Area (1-51):</h4><select id="Zipcode_3">
             <option value="0" selected="selected">1</option>
@@ -260,8 +260,8 @@
          <p id="result3"></p>
 
 
-        <h2>Predicting with Station Area and Precise Hour</h2> 
-        <p>Here we try a fourth and final technique in which we select more granular location; station area rather than zipcodes as well as more granular time, specific hour rather than day portion. Fair warning: Due to high specificity, this may return Unknown for some cases, and generalizes much less than the predictors above.  </p>
+        <h2>Predicting with <b>Station Area</b> and Specific <b>Hour</b> the Call was Received</h2> 
+        <p>Here we try a fourth and final technique in which we select more granular location; station area rather than zipcodes as well as more granular time, specific hour rather than day portion. <b>Fair warning:</b> Due to high specificity, this may return Unknown for some cases, and generalizes <b>much less</b> than the predictors above.  </p>
 
             <h4>Station Area (1-51):</h4><select id="Zipcode_4">
             <option value="0" selected="selected">1</option>
