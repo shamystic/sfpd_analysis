@@ -3,7 +3,8 @@
 The SFPD Dispatch dataset contains emergency dispatch information for 10,000 emergency calls from January 2018. This site highlights some findings I found interesting from this dataset. Full data analysis code can be found in the Jupyter Notebooks above.   
 [View live site here!](https://shamystic.github.io/sfpd_analysis/)
 
-This website and all analysis code was done in March 2018 as part of the Capital One MindSumo computer science challenge found [here.](https://www.mindsumo.com/contests/sfpd-dispatch)
+This website and all analysis code was done in March 2018 as part of the Capital One MindSumo computer science challenge found [here.](https://www.mindsumo.com/contests/sfpd-dispatch). 
+It ended up being distinguished as a top submission to the summit. :) 
 
 ## Technologies/Libraries Used  
 This work would not be possible without amazing and free open-source data science libraries and front-end development tools.    
