@@ -4,7 +4,7 @@ The SFPD Dispatch dataset contains emergency dispatch information for 10,000 eme
 [View live site here!](https://shamystic.github.io/sfpd_analysis/)
 
 This website and all analysis code was done in March 2018 as part of the Capital One MindSumo computer science challenge found [here.](https://www.mindsumo.com/contests/sfpd-dispatch). 
-It ended up being distinguished as a top submission to the summit. :) 
+Update: It ended up being distinguished as a top submission to the summit :) 
 
 ## Technologies/Libraries Used  
 This work would not be possible without amazing and free open-source data science libraries and front-end development tools.    
